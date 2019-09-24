@@ -25,24 +25,42 @@ response.titleText = "Update For Vishakapatnam Weather";
       console.log(err);}
     else{
       
-    var day0weather = result[0].forecast[0].skycodeday;
-    var day0weather1 = result[0].forecast[0].skytextday;
-    console.log("todays weather " + day0weather);
-    var day1weather = result[0].forecast[1].skycodeday;
-    var day1weather1 = result[0].forecast[1].skytextday;
-    console.log("tomorrows weather " + day1weather);
-    var day2weather = result[0].forecast[2].skycodeday;
-    var day2weather2 = result[0].forecast[2].skytextday;
-    console.log("third day weather " + day2weather);
-    var day3weather = result[0].forecast[3].skycodeday;
-    var day3weather3 = result[0].forecast[3].skytextday;
-    console.log("fourth day weather " + day3weather);
-    var day4weather = result[0].forecast[4].skycodeday;
-    var day4weather4 = result[0].forecast[4].skytextday;
-    console.log("fifth day weather " + day4weather);
-    response.redirectionUrl = "http://ramusiripalli.xyz";
-    response.mainText = "Hello from weather. Todays weather in Vishakapatnam is expected to be " + day0weather + " Degree Celsius "+ day0weather1 +". Tomorrows weather in vishakapatnam is Expected to be " + day1weather + " Degree Celsius "+ day1weather1 + ". Third day weather in Vishakapatnam is expected to  be " + day2weather + " Degree Celsius "+ day2weather2 +" . Fourth day weather in vishakapatnam will be " + day3weather + " Degree Celsius "+ day3weather3 + ". Fifth day weather in vishakapatnam will be " + day4weather+ " Degree Celsius "+ day4weather4;
-    res.json(response);
+      var Day0Min = result[0].forecast[0].low;
+      var Day0Max = result[0].forecast[0].high;
+      var Day0Forecast = result[0].forecast[0].skytextday;
+
+      var Day1Min = result[0].forecast[1].low;
+      var Day1Max = result[0].forecast[1].high;
+      var Day1Forecast = result[0].forecast[1].skytextday;
+
+      var Day2Min = result[0].forecast[2].low;
+      var Day2Max = result[0].forecast[2].high;
+      var Day2Forecast = result[0].forecast[2].skytextday;
+
+      var Day3Min = result[0].forecast[3].low;
+      var Day3Max = result[0].forecast[3].high;
+      var Day3Forecast = result[0].forecast[3].skytextday;
+
+      var Day4Min = result[0].forecast[4].low;
+      var Day4Max = result[0].forecast[4].high;
+      var Day4Forecast = result[0].forecast[4].skytextday;
+
+     response.redirectionUrl = "http://ramusiripalli.xyz";
+     response.mainText = "Hello from weather. Todays minimum weather in Vishakapatnam: "+ Day0Min + " Degree Celsius. The maximum weather is expected to be  "+ 
+     Day0Max + " Degree Celsius. The Weather will feel like " + Day0Forecast + 
+     ". Tommorow  minimum weather in Vishakapatnam: "+ Day1Min + " Degree Celsius. The maximum weather is expected to be  "+ 
+     Day1Max + " Degree Celsius. The Weather will feel like " + Day1Forecast +
+     ". Day After Tomorrow  minimum weather in Vishakapatnam: "+ Day2Min + " Degree Celsius. The maximum weather is expected to be  "+ 
+     Day2Max + " Degree Celsius. The Weather will feel like " + Day2Forecast +
+
+     ". Day Day after Tomorrow   minimum weather in Vishakapatnam: "+ Day3Min + " Degree Celsius. The maximum weather is expected to be  "+ 
+     Day3Max + " Degree Celsius. The Weather will feel like " + Day3Forecast +
+
+     ". Fourth Day  minimum weather in Vishakapatnam: "+ Day4Min + " Degree Celsius. The maximum weather is expected to be  "+ 
+     Day4Max + " Degree Celsius. The Weather will feel like " + Day4Forecast + ". Check back in nexthour to get the latest weather."
+   
+
+     res.json(response);
     }
    
   });
